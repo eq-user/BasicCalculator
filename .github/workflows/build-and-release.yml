@@ -19,7 +19,7 @@ jobs:
           distribution: 'temurin'
           cache: 'maven'
       - run: mvn clean install
-      - run: mkdir staging && mv target/calculator-1.0-SNAPSHOT.jar target/calculator-${{ env.build-number }}.jar && cp target/*.jar staging
+      - run: mkdir staging && mv target/calculator-1.0-SNAPSHOT.jar target/calculator-1.0.${{ env.build-number }}.jar && cp target/*.jar staging
       - uses: actions/upload-artifact@v3
         with:
           name: Package
