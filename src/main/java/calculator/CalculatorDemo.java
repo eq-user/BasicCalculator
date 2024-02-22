@@ -5,7 +5,7 @@ public class CalculatorDemo
 
 	public static void main() 
 	{
-		System.out.println("This is simple CalculatorDemo program. Version - 1.0.4 ");
+		System.out.println("This is simple CalculatorDemo program. Version - 1.0.5 ");
 
 	}
 
