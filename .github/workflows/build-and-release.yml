@@ -18,7 +18,7 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
           cache: 'maven'
-      - run: mvn clean publish
+      - run: mvn clean package
       - run: mkdir staging && mv target/calculator-1.0-SNAPSHOT.jar target/calculator-1.0.${{ env.build-number }}.jar && cp target/*.jar staging
       - uses: actions/upload-artifact@v3
         with:
