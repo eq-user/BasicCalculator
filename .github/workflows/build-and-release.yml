@@ -1,9 +1,12 @@
 name: CI to build and release on check-in/pull-request
 on:
-  push:
-    tags:
-      - "v*"
-  #create:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Release version (e.g. v0.1.0)'
+        required: true
+        
+  #push:
   #  tags:
   #    - "v*"
   #push:
@@ -34,8 +37,7 @@ jobs:
       - uses: marvinpinto/action-automatic-releases@latest
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          #automatic_release_tag: "v-${{ github.run_number }}"
-          automatic_release_tag: "latest"
+          automatic_release_tag: "{{ github.event.inputs.version }}"
           title: "Calculator Build ${{ github.run_number }}"
           prerelease: false
           files: staging/*.jar
