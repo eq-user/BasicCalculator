@@ -37,7 +37,7 @@ jobs:
       - uses: marvinpinto/action-automatic-releases@latest
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "{{ github.event.inputs.version }}"
+          automatic_release_tag: "{{ inputs.version }}"
           title: "Calculator Build ${{ github.run_number }}"
           prerelease: false
           files: staging/*.jar
