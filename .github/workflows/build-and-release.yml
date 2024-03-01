@@ -3,9 +3,9 @@ on:
   push:
     tags:
       - "v*"
-  create:
-    tags:
-      - "v*"
+  #create:
+  #  tags:
+  #    - "v*"
   #push:
   #  branches: [ "main" ]
   #pull_request:
@@ -35,6 +35,7 @@ jobs:
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           #automatic_release_tag: "v-${{ github.run_number }}"
+          automatic_release_tag: "latest"
           title: "Calculator Build ${{ github.run_number }}"
           prerelease: false
           files: staging/*.jar
