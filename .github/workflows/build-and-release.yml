@@ -42,5 +42,5 @@ jobs:
           prerelease: false
           files: |
             staging/*.jar
-            staging/surefire-reports/TEST-*.xml
+            staging/TEST-*.xml
             
